@@ -1,3 +1,7 @@
+ssy316/
+*p1/outputs_q1_vae/*
+*score_net_spiral.pt*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
