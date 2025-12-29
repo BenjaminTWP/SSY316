@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -c 16
 #SBATCH --mem=64G
-#SBATCH --gres=gpu:L40s:1
+#SBATCH --gres=gpu
 #SBATCH --exclude=callisto
 #SBATCH -J Assignment
 #SBATCH -t 00:30:00

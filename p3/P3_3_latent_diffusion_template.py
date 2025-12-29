@@ -121,7 +121,7 @@ def train_score(Zs, cfg: LatentConfig, model: nn.Module, device: str) -> None:
         opt.step()
 
         loss_list.append(loss.item())
-        div_list.append(div.mean())
+        div_list.append(div.mean().item())
         bar.set_description(f"[train] step {step}/{cfg.steps} loss={loss.item():.6f}")
         bar.update(1)
 
@@ -135,14 +135,20 @@ def train_score(Zs, cfg: LatentConfig, model: nn.Module, device: str) -> None:
     plt.savefig(f"{cfg.outdir}/training_loss.png", dpi=200)
     plt.close()
 
-    print("hello")
-
     plt.figure(figsize=(6, 4))
     plt.plot(div_list, lw=0.65, color="grey")
     plt.title("Mean divergence over training")
     plt.xlabel("Training steps")
     plt.ylabel("Divergence")
     plt.savefig(f"{cfg.outdir}/training_divergence.png", dpi=200)
+    plt.close()
+
+    plt.figure(figsize=(6, 4))
+    plt.plot([loss_list[i] - div_list[i] for i in range(len(loss_list))], lw=0.65, color="grey")
+    plt.title("Loss without divergence over training")
+    plt.xlabel("Training steps")
+    plt.ylabel("Loss without divergence")
+    plt.savefig(f"{cfg.outdir}/training_test.png", dpi=200)
     plt.close()
 
 
