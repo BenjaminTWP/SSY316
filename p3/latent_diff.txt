@@ -1,0 +1,3 @@
+device: cuda
+latent dataset: (60000, 2)
+Saved weights: outputs_P3.3_latent/latent_score_net.pt

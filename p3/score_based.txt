@@ -1,0 +1,2 @@
+device: cuda
+Saved weights: outputs_q2_spiral/score_net_spiral.pt

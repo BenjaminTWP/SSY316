@@ -1,6 +1,10 @@
 ssy316/
 *p1/outputs_q1_vae/*
 *score_net_spiral.pt*
+p3/outputs_P3.3_latent/MNIST
+p3/outputs_P3.3_latent/latent_score_net.pt
+p3/outputs_q1_vae/MNIST
+*vae_mnist.pt*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
