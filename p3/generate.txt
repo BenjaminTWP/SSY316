@@ -1,0 +1,4 @@
+device: cuda
+latent dataset: (60000, 2)
+latent targets: (60000,)
+Saved weights: outputs_q4_generate/generate_net.pt
