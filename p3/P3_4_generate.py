@@ -196,6 +196,7 @@ def main(train: bool = True):
     else:
         model = ScoreNet(cfg)
         model.load_state_dict(torch.load(cfg.outdir + "/generate_net.pt", weights_only=True, map_location=torch.device(device)))
+        model.to(device)
     
     model.eval()
     DIGIT = 7
@@ -227,4 +228,4 @@ def main(train: bool = True):
 
 
 if __name__ == "__main__":
-    main(train=False)
+    main(train=True)
