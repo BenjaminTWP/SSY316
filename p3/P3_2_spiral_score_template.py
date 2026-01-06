@@ -171,13 +171,7 @@ def score_true(x: np.ndarray, k: int) -> np.ndarray:
     means, var = pk_mixture_params(cfg, k)
 
     return true_score_mixture(x, means, var)
-
-def score_learned(x: np.ndarray, k: int) -> np.ndarray:
-    cfg = DiffusionConfig()
-
-    
-
-    return 
+ 
 
 def reverse_euler(cfg: DiffusionConfig, xK: np.ndarray, score_fn) -> List[np.ndarray]:
     # Reverse Euler–Maruyama using given score function
@@ -195,7 +189,6 @@ def reverse_euler(cfg: DiffusionConfig, xK: np.ndarray, score_fn) -> List[np.nda
         beta_val = beta(t, cfg.beta0, cfg.beta1)
         de_noise = np.random.randn(*xK.shape) # standard multivariate normal
         
-        # Corrected Drift sign: counter-act the inward pull of the forward SDE
         xK += (-0.5 * beta_val * xK + beta_val * score_fn(xK, k)) * delta_t + np.sqrt(beta_val * delta_t) * de_noise
 
         at_step_k.append(xK.copy())
