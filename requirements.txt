@@ -4,3 +4,7 @@ matplotlib
 tqdm
 torchinfo
 numpy
+gif
+Ipython
+scipy
+pandas
